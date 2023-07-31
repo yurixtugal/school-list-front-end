@@ -25,7 +25,7 @@ export default Products
 
 export const getServerSideProps = async () => {
     
-    const res = await fetch("http://localhost:3000/schools")
+    const res = await fetch(`${process.env.API_URL}/schools`)
     const schools = await res.json()
     console.log(schools)
     return {

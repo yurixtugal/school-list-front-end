@@ -62,7 +62,7 @@ export default ListByGrades
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const id = context.params?.id
     console.log(id)
-    const res = await fetch(`http://localhost:3000/school-list/schoolListByGrade/${id}`)
+    const res = await fetch(`${process.env.API_URL}/school-list/schoolListByGrade/${id}`)
     const schoolList = await res.json()
     return {
         props: {

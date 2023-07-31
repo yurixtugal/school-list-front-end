@@ -28,9 +28,9 @@ export default Grades
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const id = context.params?.id
     console.log(id)
-    const res = await fetch(`http://localhost:3000/grades/school/${id}`)
+    const res = await fetch(`${process.env.API_URL}/grades/school/${id}`)
     const grades = await res.json()
-    const resSchool = await fetch(`http://localhost:3000/schools/${id}`)
+    const resSchool = await fetch(`${process.env.API_URL}/schools/${id}`)
     const school = await resSchool.json()
     console.log(grades,school)
     

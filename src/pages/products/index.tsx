@@ -23,8 +23,7 @@ const Products = ({products}: Props) => {
 export default Products
 
 export const getServerSideProps = async () => {
-    
-    const res = await fetch("http://localhost:3000/products")
+    const res = await fetch(`${process.env.API_URL}/products`)
     const products = await res.json()
     
     return {

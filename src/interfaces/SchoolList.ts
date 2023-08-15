@@ -1,5 +1,6 @@
 import { ProductSchoolList } from "./ProductSchoolList";
 import { Grade } from "./Grade";
+import { CategorySchoolList } from "./CategorySchoolList";
 
 export interface SchoolList {
   id: number;
@@ -8,5 +9,6 @@ export interface SchoolList {
   grade: Grade;
   year: number;
   productSchoolLists: ProductSchoolList[],
+  categorySchoolLists: CategorySchoolList[],
   file: string
 }

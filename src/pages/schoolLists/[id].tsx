@@ -1,5 +1,6 @@
 import { SchoolList } from "@/interfaces/SchoolList";
 import { GetServerSidePropsContext } from "next";
+import { Fragment } from "react";
 
 interface Props {
     schoolList: SchoolList
@@ -27,7 +28,7 @@ const Grades = ({schoolList}: Props) => {
                           #
                         </th>
                         <th scope="col" className="px-6 py-4">
-                          Producto
+                          Descripción
                         </th>
                         <th scope="col" className="px-6 py-4">
                           Cantidad
@@ -35,15 +36,26 @@ const Grades = ({schoolList}: Props) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {schoolList.productSchoolLists.map((productList,index)=>(
-                        <tr key={index} className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                        <td className="whitespace-nowrap px-6 py-4 font-medium">
-                          {index+1}
-                        </td>
-                        <td className="whitespace-nowrap px-6 py-4">{productList.product.title} - {productList.product.description}</td>
-                                                <td className="whitespace-nowrap px-6 py-4">{productList.quantity}</td>
-                      </tr>
+                      {schoolList.categorySchoolLists.map((categorySchoolList,index) => (
+                        <Fragment key={"F_"+index} >
+                          <tr key={index} className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                            <td className="whitespace-nowrap px-6 py-4 font-medium" colSpan={3}>
+                              {categorySchoolList.name}
+                            </td>
+                          </tr>
+                        
+                        {categorySchoolList.detailProductCategory.map((detailProduct,index)=>(
+                          <tr key={"PL_"+index} className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                          <td className="whitespace-nowrap px-6 py-4 font-medium">
+                            {index+1}
+                          </td>
+                          <td className="whitespace-nowrap px-6 py-4">{detailProduct.nameProduct}</td>
+                                                  <td className="whitespace-nowrap px-6 py-4">{detailProduct.quantity}</td>
+                        </tr>
+                        ))}
+                        </Fragment>   
                       ))}
+                      
                       
                       
                     </tbody>

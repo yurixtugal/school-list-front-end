@@ -9,9 +9,9 @@ const Products = ({schools}: Props) => {
     console.log(schools)
     return (
     <div className=" bg-slate-50  py-5">
-        <div className="container mx-auto">
-            <div className="font-semibold text-2xl">Lista de colegios</div>
-            <div className=" grid grid-cols-3 gap-4 bg-center py-4">
+        <div className="sm:container mx-auto">
+            <div className="font-semibold xsm:justify-center xsm:flex sm:justify-normal">Lista de colegios</div>
+            <div className=" grid  md:grid-cols-2 ms:grid-cols-1 xl:grid-cols-3 gap-4 bg-center py-4">
             {schools.map((school) => (
                 <SchoolCard key={school.id} school={school} />
             ))}

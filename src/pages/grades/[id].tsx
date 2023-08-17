@@ -12,8 +12,8 @@ const Grades = ({grades, school}: Props) => {
     return (
         <div className=" bg-slate-50  py-5">
         <div className="container mx-auto">
-            <div className="font-semibold text-2xl">{school.name}</div>
-            <div className=" grid grid-cols-4 gap-4 bg-center py-4">
+            <div className="font-semibold xsm:justify-center xsm:flex sm:justify-normal">{school.name}</div>
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-4 gap-4 bg-center py-4 justify-stretch">
             {grades.map((grade) => (
                 <GradeCard key={grade.id} grade={grade} />
             ))}

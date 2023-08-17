@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ProductCard = ({product}: Props) => {
-    return  <div className=" bg-white rounded-lg shadow-md p-2 border flex flex-row w-96">
+    return  <div className=" bg-white rounded-lg shadow-md p-2 border flex flex-row ">
                 <div className="basis-80">
                     <div className="text-xl font-bold">{product.title}</div>
                     <div className="text-gray-600 py-4">{product.description}</div>

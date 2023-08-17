@@ -8,9 +8,9 @@ interface Props {
 const Products = ({products}: Props) => {
   return (
     <div className=" bg-slate-50  py-5">
-        <div className="container mx-auto">
-            <div className="font-semibold">Lista de productos</div>
-            <div className=" grid grid-cols-3 gap-4 bg-center py-4">
+        <div className="sm:container  xl:mx-auto md:mx-auto xsm:mx-0">
+            <div className="font-semibold xsm:justify-center xsm:flex sm:justify-normal">Lista de productos</div>
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-3 gap-4 bg-center py-4 ">
             {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
             ))}
